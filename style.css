@@ -1,0 +1,35 @@
+/* reset */
+html, body, div, span, h1, h2, h3, h4, h5, h6, p { 
+    margin: 0; 
+    padding: 0; 
+    border: 0; 
+    font-size: 100%; 
+    font: inherit; 
+    vertical-align: baseline; 
+}
+
+body {
+    text-align: center;
+    font: 13px Open Sans, sans-serif;
+    line-height: 1;
+    color: #333;
+}
+
+.loading-gif {
+    position: relative;
+}
+  
+ .loading-text {
+    font-size: 35px;
+    color: #a8a8a8;
+    padding: 40px 0 0 20px;
+    font-weight: 300;
+    position: relative;
+}
+ 
+.loading-dots {
+    display: inline-block;
+    width: 40px;
+    text-align: left;
+    font-weight: 300
+}
