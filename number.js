@@ -128,8 +128,17 @@ angular.module('Obfuscate', [])
                 names: [ { single: 'a few', dollars: 'a few dollars' } ]
             },
             {
+                range: [4, 9],
+                noRecurse: true,
+                names: [ { single: 'a number of', condition: 'x == Math.round(x)' } ]
+            },
+            {
                 range: [4, 10], 
                 names: [ { single: 'several', dollars: 'several dollars' } ]
+            },
+            {
+                range: [5, 15],
+                names: [ { single: 'a handful of' } ]
             },
             {
                 range: 12, 
