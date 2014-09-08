@@ -210,28 +210,28 @@ angular.module('Obfuscate', [])
                         case 71:
                         case 72:
                         case 73:
-                            names.push((x == 36 ? '' : 'about ') + 'one-half gross')
+                            names.push((x == 72 ? '' : 'about ') + 'one-half gross')
                             break
                         case 107:
                         case 108:
                         case 109:
-                            names.push((x == 36 ? '' : 'about ') + 'three-quarters gross')
+                            names.push((x == 108 ? '' : 'about ') + 'three-quarters gross')
                             break
                         case 143:
                         case 144:
                         case 145:
-                            names.push((x == 36 ? '' : 'about ') + 'one gross')
+                            names.push((x == 144 ? '' : 'about ') + 'one gross')
                         case 215:
                         case 216:
                         case 217:
-                            names.push((x == 36 ? '' : 'about ') + 'one and a half gross')
+                            names.push((x == 216 ? '' : 'about ') + 'one and a half gross')
                             break
                         case 358:
                         case 359:
                         case 360:
                         case 361:
                         case 362:
-                            names.push((x == 36 ? '' : 'about ') + 'two and a half gross')
+                            names.push((x == 360 ? '' : 'about ') + 'two and a half gross')
                             break
                     }
                 },
