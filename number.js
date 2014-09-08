@@ -12,7 +12,8 @@ angular.module('Obfuscate', [])
             'a list of 5 things',
             '1',
             '2 feet long and 13 feet wide',
-            '3456'
+            '3456',
+            '$0.02'
         ]
 
         $scope.example = examples[Math.floor(Math.random()*examples.length)]
