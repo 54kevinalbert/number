@@ -153,6 +153,10 @@ angular.module('Obfuscate', [])
                 names: [ { single: 'one score', plural: 'score' } ]
             },
             {
+                range: [24, 132],
+                names: [ { single: 'dozens of', condition: 'Math.floor(x%12) == 0 || Math.ceil(x%12) == 12' } ]
+            },
+            {
                 range: [40, 100],
                 mod: 55,
                 noRecurse: true,
