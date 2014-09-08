@@ -28,9 +28,10 @@ angular.module('Obfuscate', [])
 
             var options = [],
                 parts = $scope.in.split(/\s+/),
+                out = [],
                 x
 
-            $scope.out.push(parts.join(' '))
+            out.push(parts.join(' '))
 
             for (var i in parts)
                 if (!isNaN(x = parseFloat(parts[i].replace(/^\$/, '')))) {
@@ -60,11 +61,24 @@ angular.module('Obfuscate', [])
                         }
                     }
 
-                    $scope.out.push(sentence)
+                    out.push(sentence.replace(/^\s+|\s+$/gm,''))
                 }
             }
 
-            $scope.out.sort(function(a, b) { return a.length - b.length })
+            out.sort(function(a, b) {
+                var x = a.length - b.length
+                if (!x)
+                    x = a > b ? 1 : -1
+                return x
+            })
+
+            var last = false
+            for (var i in out) {
+                if (out[i] != last)
+                    $scope.out.push(out[i])
+                last = out[i]
+            }
+
         }
     })
     .service('Generator', function() {
