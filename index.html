@@ -15,10 +15,11 @@
         <div class="main" ng-controller="TheController">
             <div class="in">
                 <label for="input">Specify a number: </label>
-                <input type="text" name="input" ng-model="in" ng-change="refresh" />
+                <input type="text" name="input" ng-model="in" />
+                <button ng-click="refresh()">translate</button>
             </div>
             <div class="out">
-                <div ng-repeat="answer in out" ng-class-odd="odd">
+                <div ng-repeat="answer in out track by $index" ng-class-odd="odd">
                     {{answer}}
                 </div>
             </div>
