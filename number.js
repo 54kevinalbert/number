@@ -11,7 +11,8 @@ angular.module('Obfuscate', [])
             '125.5',
             'a list of 5 things',
             '1',
-            '2 feet long and 13 feet wide'
+            '2 feet long and 13 feet wide',
+            '3456'
         ]
 
         $scope.example = examples[Math.floor(Math.random()*examples.length)]
@@ -80,6 +81,12 @@ angular.module('Obfuscate', [])
                 ]
             },
             {
+                range: [1/9007199254740992, 1],
+                names: [
+                    { dollars: 'some change' }
+                ]
+            },
+            {
                 range: 1,
                 names: [
                     { single: 'one', dollars: 'one dollar' },
@@ -115,6 +122,10 @@ angular.module('Obfuscate', [])
             {
                 range: 13,
                 names: [ { single: 'a baker\'s dozen', plural: 'baker\'s dozens of' } ]
+            },
+            {
+                range: 20,
+                names: [ { single: 'one score', plural: 'score' } ]
             },
             {
                 range: [10, 100],
@@ -162,24 +173,36 @@ angular.module('Obfuscate', [])
             {
                 range: 144,
                 special: function(x, names) {
-                    var a = x == Math.round(x) ? '' : 'about '
                     switch (Math.round(x)) {
                         case 36:
-                            names.push(a + 'one-quarter gross')
+                        case 37:
+                            names.push((x == 36 ? '' : 'about ') + 'one-quarter gross')
                             break
+                        case 71:
                         case 72:
-                            names.push(a + 'one-half gross')
+                        case 73:
+                            names.push((x == 36 ? '' : 'about ') + 'one-half gross')
                             break
+                        case 107:
                         case 108:
-                            names.push(a + 'three-quarters gross')
+                        case 109:
+                            names.push((x == 36 ? '' : 'about ') + 'three-quarters gross')
                             break
+                        case 143:
                         case 144:
-                            names.push(a + 'one gross')
+                        case 145:
+                            names.push((x == 36 ? '' : 'about ') + 'one gross')
+                        case 215:
                         case 216:
-                            names.push(a + 'one and a half gross')
+                        case 217:
+                            names.push((x == 36 ? '' : 'about ') + 'one and a half gross')
                             break
+                        case 358:
+                        case 359:
                         case 360:
-                            names.push(a + 'two and a half gross')
+                        case 361:
+                        case 362:
+                            names.push((x == 36 ? '' : 'about ') + 'two and a half gross')
                             break
                     }
                 },
@@ -228,6 +251,10 @@ angular.module('Obfuscate', [])
                     { single: 'a whole mess of' },
                     { single: 'tons of', dollars: 'tons of dollars'}
                 ]
+            },
+            {
+                range: 1728,
+                names: [ { single: 'great gross of' } ]
             },
             {
                 range: [100000, 9007199254740992],
