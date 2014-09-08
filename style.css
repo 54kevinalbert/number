@@ -10,26 +10,55 @@ html, body, div, span, h1, h2, h3, h4, h5, h6, p {
 
 body {
     text-align: center;
-    font: 13px Open Sans, sans-serif;
+    font: 18px Open Sans, sans-serif;
     line-height: 1;
     color: #333;
 }
 
-.loading-gif {
-    position: relative;
+.main {
+    margin: 60px auto;
+    width: 100%;
+    max-width: 640px;
 }
-  
- .loading-text {
-    font-size: 35px;
-    color: #a8a8a8;
-    padding: 40px 0 0 20px;
+
+.in {
+    font-size: 26px;
     font-weight: 300;
-    position: relative;
 }
- 
-.loading-dots {
-    display: inline-block;
-    width: 40px;
+
+input[type="text"] {
+    font-size: 18px;
+    height: 30px;
+    padding-left: 8px;
+}
+
+.out {
+    margin-top: 40px;
     text-align: left;
-    font-weight: 300
+}
+
+.out div {
+    padding: 4px;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+.out div:hover {
+    color: #f6f;
+}
+
+.example {
+    margin-top: 40px;
+    font-size: 16px;
+    opacity: 0.7;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+.example.ng-hide {
+    opacity: 0px;
+}
+
+q {
+    font-style: italic;
 }

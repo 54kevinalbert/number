@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
     <head>
-        <title>fun with numbers</title>
+        <title>Obfuscate My Sentence</title>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, user-scalable=no" />
         <link rel="icon" href="favicon.ico" type="image/x-icon" />
@@ -11,17 +11,15 @@
         <script src="number.js"></script>
     </head>
 
-    <body ng-app="FunWithNumbers">
+    <body ng-app="Obfuscate">
         <div class="main" ng-controller="TheController">
             <div class="in">
-                <form ng-submit="translate()">
-                    <label for="input">Specify a number: </label>
-                    <input type="text" name="input" ng-model="in" />
-                    <input type="submit" value="Translate!" />
-                </form>
+                <input type="text" name="input" ng-model="in" ng-change="translate()" />
+                <br />
+                <div class="example" ng-show="starting">example: <q>{{example}}</q></div>
             </div>
             <div class="out">
-                <div ng-repeat="answer in out track by $index" ng-class-odd="odd">
+                <div ng-repeat="answer in out track by $index">
                     {{answer}}
                 </div>
             </div>
