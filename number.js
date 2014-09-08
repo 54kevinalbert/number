@@ -129,7 +129,7 @@ angular.module('Obfuscate', [])
                 names: [ { single: 'one score', plural: 'score' } ]
             },
             {
-                range: [10, 100],
+                range: [40, 100],
                 mod: 55,
                 noRecurse: true,
                 names: [

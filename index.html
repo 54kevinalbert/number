@@ -15,6 +15,7 @@
         <div class="main" ng-controller="TheController">
             <div class="in">
                 <input type="text" name="input" ng-model="in" ng-change="translate()" />
+                <div class="x" ng-click="(in='') || translate()" ng-show="in">x</div>
                 <br />
                 <div class="example" ng-show="!in" ng-click="(in = example) && translate()">example: <q>{{example}}</q></div>
             </div>

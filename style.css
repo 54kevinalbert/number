@@ -33,6 +33,21 @@ input[type="text"] {
     width: 100%;
 }
 
+.x {
+    opacity: 0.7;
+    cursor: pointer;
+    position: relative;
+    left: 5px;
+    float: right;
+    top: -34px;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+.x:hover {
+    color: #f6f;
+}
+
 .out {
     margin-top: 40px;
     text-align: left;
@@ -46,6 +61,7 @@ input[type="text"] {
 
 .out div:hover {
     color: #f6f;
+    padding-left: 0px;
 }
 
 .example {
@@ -54,6 +70,7 @@ input[type="text"] {
     opacity: 0.7;
     -webkit-transition: all 0.5s;
     transition: all 0.5s;
+    cursor: pointer;
 }
 
 .example.ng-hide {
