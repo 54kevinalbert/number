@@ -3,23 +3,32 @@ angular.module('Obfuscate', [])
 
         $scope.in = ''
         $scope.out = []
-        $scope.starting = true
-        
+
         var examples = [
             '12 apples for $5',
             '$10000000',
             'You can get 144.18 pesos for $11',
             '125.5',
-            'a list of 12 things'
+            'a list of 5 things',
+            '1',
+            '2 feet long and 13 feet wide'
         ]
+
         $scope.example = examples[Math.floor(Math.random()*examples.length)]
 
         $scope.translate = function() {
             $scope.out = []
+            if (!$scope.in) 
+                return
+            
+            $scope.example = examples[Math.floor(Math.random()*examples.length)]
+
             var options = [],
                 parts = $scope.in.split(/\s+/),
                 x
+
             $scope.out.push(parts.join(' '))
+
             for (var i in parts)
                 if (!isNaN(x = parseFloat(parts[i].replace(/^\$/, '')))) {
                     options.push(Generator.generate(x, 
@@ -164,6 +173,8 @@ angular.module('Obfuscate', [])
                         case 108:
                             names.push(a + 'three-quarters gross')
                             break
+                        case 144:
+                            names.push(a + 'one gross')
                         case 216:
                             names.push(a + 'one and a half gross')
                             break
@@ -172,7 +183,7 @@ angular.module('Obfuscate', [])
                             break
                     }
                 },
-                names: [ { single: 'gross', plural: 'gross' } ]
+                names: [ { plural: 'gross' } ]
             },
             {
                 range: 169,

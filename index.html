@@ -16,7 +16,7 @@
             <div class="in">
                 <input type="text" name="input" ng-model="in" ng-change="translate()" />
                 <br />
-                <div class="example" ng-show="starting">example: <q>{{example}}</q></div>
+                <div class="example" ng-show="!in" ng-click="(in = example) && translate()">example: <q>{{example}}</q></div>
             </div>
             <div class="out">
                 <div ng-repeat="answer in out track by $index">
