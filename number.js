@@ -20,9 +20,10 @@ angular.module('Obfuscate', [])
 
         $scope.translate = function() {
             $scope.out = []
+
             if (!$scope.in) 
                 return
-            
+
             $scope.example = examples[Math.floor(Math.random()*examples.length)]
 
             var options = [],
@@ -109,12 +110,12 @@ angular.module('Obfuscate', [])
                 ]
             },
             {
-                range: [3, 10], 
-                names: [ { single: 'several', dollars: 'several dollars' } ]
-            },
-            {
                 range: [3, 11], 
                 names: [ { single: 'a few', dollars: 'a few dollars' } ]
+            },
+            {
+                range: [4, 10], 
+                names: [ { single: 'several', dollars: 'several dollars' } ]
             },
             {
                 range: 12, 
