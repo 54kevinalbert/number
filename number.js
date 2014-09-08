@@ -34,7 +34,7 @@ angular.module('Obfuscate', [])
 
             out.push(parts.join(' '))
 
-            int nDimensions = 0
+            var nDimensions = 0
             for (var i in parts)
                 if (!isNaN(parseFloat(parts[i].replace(/^\$/, ''))))
                     nDimensions++
