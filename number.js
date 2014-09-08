@@ -3,7 +3,7 @@ angular.module('FunWithNumbers', [])
         $scope.in = ''
         $scope.out = []
 
-        $scope.refresh = function() {
+        $scope.translate = function() {
             $scope.out = []
             var options = [],
                 parts = $scope.in.split(/\s+/)
@@ -17,7 +17,6 @@ angular.module('FunWithNumbers', [])
 
             var matrix = Ennumerator.process(options)
             for (var i in matrix) {
-                console.log(matrix[i])
                 var j = 0, 
                     sentence = ''
 
@@ -25,12 +24,14 @@ angular.module('FunWithNumbers', [])
                     if (k > 0) 
                         sentence += ' '
                     
-                    sentence += parts[k].match(/^\$?[0-9]+$/) ? 
+                    sentence += parts[k].match(/^-?\$?[0-9]+$/) ? 
                         matrix[i][j++] : 
                         parts[k]
 
                     if (k == (parts.length - 1) && j == matrix[i].length) {
                         sentence = sentence.replace(/ ?of([.!?])?$/, '$1')
+                        if (parts.length == 1)
+                            sentence = sentence.replace(/a /, '')
                     }
                 }
 
@@ -41,6 +42,10 @@ angular.module('FunWithNumbers', [])
     .service('Generator', function() {
 
         var t = [
+            {
+                range: [-9007199254740992, -1/9007199254740992],
+                names: [{single: 'negative', dollars: 'negative dollars'}]
+            },
             {
                 range: 0,
                 names: [
@@ -82,11 +87,51 @@ angular.module('FunWithNumbers', [])
             },
             {
                 range: 144,
-                names: [ { single: 'gross' } ]
+                special: function(x, names) {
+                    var n = x / 12
+                    switch (n) {
+                        case 0.25:
+                            names.push('one-quarter gross')
+                            break
+                        case 0.5:
+                            names.push('one-half gross')
+                            break
+                        case 0.75:
+                            names.push('three-quarters gross')
+                            break
+                        case 1.5:
+                            names.push('one and a half gross')
+                            break
+                        case 2.5:
+                            names.push('two and a half gross')
+                            break
+                    }
+                },
+                names: [ { single: 'gross', plural: 'gross' } ]
             },
             {
                 range: 169,
-                names: [ { single: 'baker\'s gross' } ]
+                special: function(x, names) {
+                    var n = x / 13
+                    switch (n) {
+                        case 0.25:
+                            names.push('one-quarter baker\'s gross')
+                            break
+                        case 0.5:
+                            names.push('one-half baker\'s gross')
+                            break
+                        case 0.75:
+                            names.push('three-quarters baker\'s gross')
+                            break
+                        case 1.5:
+                            names.push('one and a half baker\'s gross')
+                            break
+                        case 2.5:
+                            names.push('two and a half baker\'s gross')
+                            break
+                    }
+                },
+                names: [ { single: 'baker\'s gross', plural: 'baker\'s gross' } ]
             },
             {
                 range: [10, 100],
@@ -104,7 +149,7 @@ angular.module('FunWithNumbers', [])
             var names = []
             for (var i in t) {
 
-                if (typeof t[i].range == 'number' ?  x == t[i].range : 
+                if (typeof t[i].range == 'number' ?  Math.round(x) == t[i].range : 
                         (x >= t[i].range[0] && x <= t[i].range[1])) {
 
                     for (var j in t[i].names) {
@@ -128,6 +173,9 @@ angular.module('FunWithNumbers', [])
 
                     }
                 }
+
+                if (!plural && t[i].special)
+                    t[i].special(x, names)
             }
             return names
         }

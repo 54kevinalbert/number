@@ -14,9 +14,11 @@
     <body ng-app="FunWithNumbers">
         <div class="main" ng-controller="TheController">
             <div class="in">
-                <label for="input">Specify a number: </label>
-                <input type="text" name="input" ng-model="in" />
-                <button ng-click="refresh()">translate</button>
+                <form ng-submit="translate()">
+                    <label for="input">Specify a number: </label>
+                    <input type="text" name="input" ng-model="in" />
+                    <input type="submit" value="Translate!" />
+                </form>
             </div>
             <div class="out">
                 <div ng-repeat="answer in out track by $index" ng-class-odd="odd">
