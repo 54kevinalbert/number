@@ -34,7 +34,8 @@ input[type="text"] {
 }
 
 .x {
-    opacity: 0.7;
+    opacity: 1;
+    color: #a8a8a8;
     cursor: pointer;
     position: relative;
     left: 5px;
@@ -67,7 +68,8 @@ input[type="text"] {
 .example {
     margin-top: 40px;
     font-size: 16px;
-    opacity: 0.7;
+    opacity: 1;
+    color: #a8a8a8;
     -webkit-transition: all 0.5s;
     transition: all 0.5s;
     cursor: pointer;
@@ -79,4 +81,7 @@ input[type="text"] {
 
 q {
     font-style: italic;
+}
+
+.loading {
 }

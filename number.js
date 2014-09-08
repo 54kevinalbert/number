@@ -13,7 +13,8 @@ angular.module('Obfuscate', [])
             '1',
             '2 feet long and 13 feet wide',
             '3456',
-            '$0.02'
+            '$0.02',
+            '6 days 20 hours 36 minutes and 8 seconds remaining'
         ]
 
         $scope.example = examples[Math.floor(Math.random()*examples.length)]
@@ -32,6 +33,15 @@ angular.module('Obfuscate', [])
                 x
 
             out.push(parts.join(' '))
+
+            int nDimensions = 0
+            for (var i in parts)
+                if (!isNaN(parseFloat(parts[i].replace(/^\$/, ''))))
+                    nDimensions++
+
+            if (nDimensions >= 3) {
+
+            }
 
             for (var i in parts)
                 if (!isNaN(x = parseFloat(parts[i].replace(/^\$/, '')))) {
@@ -122,6 +132,10 @@ angular.module('Obfuscate', [])
                 names: [
                     { single: 'a pair of', plural: 'pairs of', condition: 'x == Math.round(x)' }
                 ]
+            },
+            {
+                range: 3,
+                names: [ { single: 'a trio of', plural: 'trios of' } ]
             },
             {
                 range: [3, 11], 
