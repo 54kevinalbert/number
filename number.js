@@ -160,7 +160,7 @@ angular.module('Obfuscate', [])
                 range: [50, 3050],
                 noRecurse: true,
                 names: [
-                    { single: 'a whole lot of', dollars: 'a whole lof of dollars' },
+                    { single: 'a whole lot of', dollars: 'a whole lot of dollars' },
                 ]
             },
             {
