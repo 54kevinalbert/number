@@ -14,7 +14,7 @@ angular.module('Obfuscate', [])
             '2 feet long and 13 feet wide',
             '3456',
             '$0.02',
-            '6 days 20 hours 36 minutes and 8 seconds remaining'
+            '20 hours 36 minutes and 8 seconds remaining'
         ]
 
         $scope.example = examples[Math.floor(Math.random()*examples.length)]
