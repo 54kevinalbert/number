@@ -30,23 +30,20 @@ angular.module('Obfuscate', [])
             var options = [],
                 parts = $scope.in.split(/\s+/),
                 out = [],
+                n = 1,
                 x
 
             out.push(parts.join(' '))
-
-            var nDimensions = 0
-            for (var i in parts)
-                if (!isNaN(parseFloat(parts[i].replace(/^\$/, ''))))
-                    nDimensions++
-
-            if (nDimensions >= 3) {
-
-            }
 
             for (var i in parts)
                 if (!isNaN(x = parseFloat(parts[i].replace(/^\$/, '')))) {
                     options.push(Generator.generate(x, 
                         (parts[i].indexOf('$') >= 0)))
+                    n *= options[options.length - 1].length
+                    if (n > 20000) {
+                        $scope.out = [ 'something???' ]
+                        return
+                    }
                 }
 
             if (options && options.length) {
