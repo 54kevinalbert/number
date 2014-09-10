@@ -13,6 +13,7 @@ body {
     font: 18px Open Sans, sans-serif;
     line-height: 1;
     color: #333;
+    padding: 0 20px;
 }
 
 .main {
@@ -24,7 +25,6 @@ body {
 .in {
     font-size: 26px;
     font-weight: 300;
-    padding: 0 8px;
 }
 
 input[type="text"] {
@@ -32,7 +32,6 @@ input[type="text"] {
     height: 30px;
     padding-left: 8px;
     width: 100%;
-    width : 91%;
 }
 
 .x {
@@ -54,7 +53,6 @@ input[type="text"] {
 .out {
     margin-top: 40px;
     text-align: left;
-    padding: 0 8px;
 }
 
 .out div {
