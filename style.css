@@ -24,6 +24,7 @@ body {
 .in {
     font-size: 26px;
     font-weight: 300;
+    padding: 0 8px;
 }
 
 input[type="text"] {
@@ -52,6 +53,7 @@ input[type="text"] {
 .out {
     margin-top: 40px;
     text-align: left;
+    padding: 0 8px;
 }
 
 .out div {
