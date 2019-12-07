@@ -1,1 +1,1 @@
-[https://kevin-albert.github.io/number]
+[https://kevin-albert.github.io/factorizer]
